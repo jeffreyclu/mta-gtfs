@@ -9,7 +9,8 @@ describe('MTA', function () {
   var mta,
     serviceType,
     stopId,
-    stopIds;
+    stopIds,
+    feedUrl;
 
   before(function (done) {
     mta = new Mta({
@@ -95,7 +96,7 @@ describe('MTA', function () {
   });
 
   it('should get schedule info for a station with a different feed_id', function () {
-    return mta.schedule('A15', 26)
+    return mta.schedule('A15', '-ace')
     .then(function (result) {
       result.should.have.property('schedule');
       result.should.have.property('updatedOn');
