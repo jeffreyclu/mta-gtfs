@@ -1,10 +1,10 @@
 {
   "name": "mta-gtfs-jl",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An NYC MTA API library",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "MTA_API_KEY=OPFNRnTfMc5FPBeBb79fC1RZbvL16aQg5H0CSu5B mocha"
   },
   "repository": {
     "type": "git",
