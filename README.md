@@ -13,10 +13,9 @@ npm install mta-gtfs --save
 ### Library
 
 ```
-var Mta = require('mta-gtfs');
-var mta = new Mta({
+const Mta = require('mta-gtfs');
+const mta = new Mta({
   key: 'MY-MTA-API-KEY-HERE', // only needed for mta.schedule() method
-  feed_id: 1                  // optional, default = 1
 });
 ```
 * uses [node-fetch](https://github.com/bitinn/node-fetch) to make http requests
@@ -24,9 +23,9 @@ var mta = new Mta({
 
 #### MTA
 
-For feed information, see http://datamine.mta.info/list-of-feeds.
+For feed information, see https://api.mta.info/#/subwayRealTimeFeeds.
 
-In order to use the MTA real-time APIs, you will need an MTA API key from here: http://datamine.mta.info/user/register.
+In order to use the MTA real-time APIs, you will need an MTA API key from here: https://api.mta.info/#/signup.
 
 ### Get subway stop info
 
@@ -47,8 +46,7 @@ mta.stop(635).then(function (result) {
   console.log(result);
 });
 ```
-An array of ids may also be passed to this method.
-
+An array of stop ids may also be passed to this method. 
 The stop ids given here are used in `mta.schedule()`.
 
 ### Get MTA service status info
@@ -76,8 +74,10 @@ Only available for the routes found in this [list](http://datamine.mta.info/list
 
 Given a single subway stop id (or an array of stop ids) and an optional feedId, it gives schedule data for both northbound and southbound trains.
 
+Note: the feedIds in use are provided by `mta.feedIds()`.
+
 ```Javascript
-mta.schedule(635, 1).then(function (result) {
+mta.schedule(635, '-l').then(function (result) {
   console.log(result);
 });
 ```
