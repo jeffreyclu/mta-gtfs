@@ -1,14 +1,14 @@
 {
-  "name": "mta-gtfs",
-  "version": "1.1.0",
+  "name": "mta-gtfs-jl",
+  "version": "1.0.0",
   "description": "An NYC MTA API library",
   "main": "index.js",
   "scripts": {
-    "test": "MTA_API_KEY=OPFNRnTfMc5FPBeBb79fC1RZbvL16aQg5H0CSu5B mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aamaliaa/mta-gtfs.git"
+    "url": "https://github.com/jeffreyclu/mta-gtfs"
   },
   "keywords": [
     "mta",
@@ -16,12 +16,12 @@
     "nyc",
     "transit"
   ],
-  "author": "Amalia Viti",
+  "author": "Jeffrey Lu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aamaliaa/mta-gtfs/issues"
+    "url": "https://github.com/jeffreyclu/mta-gtfs/issues"
   },
-  "homepage": "https://github.com/aamaliaa/mta-gtfs",
+  "homepage": "https://github.com/jeffreyclu/mta-gtfs",
   "dependencies": {
     "csv-parse": "^1.0.1",
     "mta-gtfs-realtime-bindings": "^0.0.5",
