@@ -1,16 +1,14 @@
-var should = require('should');
-var Mta = require('../lib/mta');
+const Mta = require('../lib/mta');
 
-var config = {
+const config = {
   key: process.env.MTA_API_KEY,
 };
 
 describe('MTA', function () {
-  var mta,
+  let mta,
     serviceType,
     stopId,
-    stopIds,
-    feedUrl;
+    stopIds;
 
   before(function (done) {
     mta = new Mta({
@@ -37,7 +35,7 @@ describe('MTA', function () {
     });
   });
 
-  it('should get info for S30S', function() {
+  it('should get info for S30S', function () {
     return mta.stop('S30S')
     .then(function (result) {
       result.stop_id.should.equal('S30S');
