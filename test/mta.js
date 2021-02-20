@@ -115,4 +115,65 @@ describe('MTA', function () {
     });
   });
 
+  it('should return an empty object for a non-existent stopId (number)', function () {
+    return mta.schedule(1234)
+    .then((result) => {
+      result.should.be.an.Object;
+      JSON.stringify(result).should.be.exactly('{}');
+    });
+  });
+
+  it('should return an empty object for a non-existent stopId (string)', function () {
+    return mta.schedule('1234')
+    .then((result) => {
+      result.should.be.an.Object;
+      JSON.stringify(result).should.be.exactly('{}');
+    });
+  });
+
+  it('should return an empty object for non-existent stopIds (numbers)', function () {
+    return mta.schedule([9011, 1234])
+    .then((result) => {
+      result.should.be.an.Object;
+      JSON.stringify(result).should.be.exactly('{}');
+    });
+  });
+
+  it('should return an empty object for non-existent stopIds (strings)', function () {
+    return mta.schedule(['9011', '1234'])
+    .then((result) => {
+      result.should.be.an.Object;
+      JSON.stringify(result).should.be.exactly('{}');
+    });
+  });
+
+  it('should return an error for invalid stopId (function)', function () {
+    return mta.schedule(()=>{})
+    .catch((error) => {
+      error.should.be.an.Error;
+    });
+  });
+
+  it('should return an empty object for a stopId with incorrect feedId', function () {
+    return mta.schedule(stopId, '-ace')
+    .then((result) => {
+      result.should.be.an.Object;
+      JSON.stringify(result).should.be.exactly('{}');
+    });
+  });
+  
+  it('should return an error for a stopId with invalid feedId)', function () {
+    return mta.schedule(stopId, '-asdsada')
+    .catch((error) => {
+      error.should.be.an.Error;
+    });
+  });
+
+   it('should return an error for a stopId with invalid feedId (function))', function () {
+    return mta.schedule(stopId, () => {})
+    .catch((error) => {
+      error.should.be.an.Error;
+    });
+  });
+
 });
