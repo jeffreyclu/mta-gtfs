@@ -1,8 +1,12 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true
+    "mocha": true,
+    "es6": true
   },
   "rules": {
     "quotes": [2, "single"],
@@ -17,13 +21,13 @@
     "space-infix-ops": [2],
     "no-trailing-spaces": [0],
     "vars-on-top": [2],
-    "space-after-keywords": [2, "always"],
-    "space-after-function-name": [2, "always"],
+    "keyword-spacing": [2, {"after": true}],
+    "space-before-function-paren": [2, "always"],
     "semi": [2],
     "no-mixed-spaces-and-tabs": [1],
     "new-parens": [2],
     "no-underscore-dangle": [0],
     "curly": [2],
-    "no-shadow": [0],
+    "no-shadow": [0]
   }
 }
