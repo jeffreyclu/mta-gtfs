@@ -1,4 +1,6 @@
 const Mta = require('../lib/mta');
+require('should');
+require('mocha');
 
 const config = {
   key: process.env.MTA_API_KEY,
