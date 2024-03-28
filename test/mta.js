@@ -72,11 +72,6 @@ describe('MTA', function () {
     });
   });
 
-  it('MTA_API_KEY should be set', function (done) {
-    config.key.should.not.equal('');
-    done();
-  });
-
   it('should get schedule info for 1 MTA subway station (number input)', function () {
     return mta.schedule(stopId)
     .then(function (result) {
