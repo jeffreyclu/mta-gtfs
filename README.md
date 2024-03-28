@@ -14,9 +14,7 @@ npm install mta-gtfs --save
 
 ```
 const Mta = require('mta-gtfs');
-const mta = new Mta({
-  key: 'MY-MTA-API-KEY-HERE', // only needed for mta.schedule() method
-});
+const mta = new Mta();
 ```
 * uses [node-fetch](https://github.com/bitinn/node-fetch) to make http requests
 * returns Promise objects and makes use of native Promises (make sure you are using >= Node v0.12)
@@ -24,8 +22,6 @@ const mta = new Mta({
 #### MTA
 
 For feed information, see https://api.mta.info/#/subwayRealTimeFeeds.
-
-In order to use the MTA real-time APIs, you will need an MTA API key from here: https://api.mta.info/#/signup.
 
 ### Get subway stop info
 
@@ -87,10 +83,6 @@ The API route this method hits is updated by the MTA every 30 seconds.
 ## Tests
 
 See [test cases](https://github.com/aamaliaa/mta/blob/master/test/mta.js) for more examples.
-
-```
-MTA_API_KEY='your-api-key-here' npm test
-```
 
 ## To do
 
